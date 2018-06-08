@@ -18,8 +18,8 @@ services:
      image: wordpress:latest
      networks:
         dns:
-        - "80.80.80.80"
-        - "80.80.81.81"
+        - 80.80.80.80
+        - 80.80.81.81
      ports:
        - "8000:80"
      restart: always
