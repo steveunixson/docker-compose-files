@@ -20,13 +20,13 @@ services:
      depends_on:
        - db
      image: wordpress:latest
-     app:
-    
-      ports:
-      - "8080:80"
-      networks:
+     networks:
+      networks: 
       - mynetwork
 
+      ports:
+      - "8080:80"
+      
       mynetwork:
         aliases:
           - db1.internal.prod.example.com
