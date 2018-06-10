@@ -1,6 +1,10 @@
 version: '2'
 
 services:
+
+
+
+
    db:
      image: mysql:5.7
      volumes:
@@ -16,10 +20,18 @@ services:
      depends_on:
        - db
      image: wordpress:latest
-     networks:
+     app:
+    
+      ports:
+      - "8080:80"
+      networks:
+      - mynetwork
+
       mynetwork:
         aliases:
-          - bonobo-systems.cf
+          - db1.internal.prod.example.com
+          - db2.internal.prod.example.com
+
      ports:
        - "8000:80"
      restart: always
