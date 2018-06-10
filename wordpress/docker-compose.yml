@@ -17,9 +17,9 @@ services:
        - db
      image: wordpress:latest
      networks:
-        dns: 
-          hostname:   bonobo
-          domainname: bonobo-systems.cf
+      mynetwork:
+        aliases:
+          - bonobo-systems.cf
      ports:
        - "8000:80"
      restart: always
