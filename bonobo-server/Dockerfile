@@ -31,7 +31,10 @@ ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 # confirm installation
 RUN node -v
 RUN npm -v
+
 RUN mkdir -p /usr/src/app
+RUN git clone https://github.com/steveunixson/bonobo-calling-express.git /usr/src/app
+
 WORKDIR /usr/src/app
 COPY package.json /usr/src/app/
 COPY package-lock.json /usr/src/app
