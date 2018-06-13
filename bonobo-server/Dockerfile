@@ -8,7 +8,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN apt-get update \
     && apt-get install -y curl \
     && apt-get -y autoclean \
-    && apt-get install git
+    && apt-get -y install git
 
 # nvm environment variables
 ENV NVM_DIR /usr/local/nvm
