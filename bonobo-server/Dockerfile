@@ -12,7 +12,7 @@ RUN apt-get update \
 
 # nvm environment variables
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 4.4.7
+ENV NODE_VERSION 6.0.0
 
 # install nvm
 # https://github.com/creationix/nvm#install-script
@@ -38,4 +38,4 @@ RUN git clone https://github.com/steveunixson/bonobo-calling-express.git /usr/sr
 WORKDIR /usr/src/bonobo/
 RUN npm install
 EXPOSE 8001
-CMD [ “node”, “/usr/src/app/dist” ]
+CMD [ “node”, “/usr/src/app/dist/server.js” ]
