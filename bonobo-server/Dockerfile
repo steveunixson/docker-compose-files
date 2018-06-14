@@ -33,12 +33,9 @@ RUN node -v
 RUN npm -v
 
 RUN mkdir -p /usr/src/app
-RUN git clone https://github.com/steveunixson/bonobo-calling-express.git /usr/src/app
+RUN git clone https://github.com/steveunixson/bonobo-calling-express.git /usr/src/bonobo
 
-WORKDIR /usr/src/app
-COPY package.json /usr/src/app/
-COPY package-lock.json /usr/src/app
+WORKDIR /usr/src/bonobo/
 RUN npm install
-COPY . /usr/src/app
 EXPOSE 8001
 CMD [ “node”, “/usr/src/app/dist” ]
